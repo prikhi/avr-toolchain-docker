@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --rm -t lpodkalicki/avr-toolchain:latest .
+docker build --rm -t lysergia/avr-toolchain:latest .

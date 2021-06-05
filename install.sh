@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME=lpodkalicki/avr-toolchain
+IMAGE_NAME=lysergia/avr-toolchain
 TOOLCHAIN_SCRIPT=avr-toolchain
 
 docker pull ${IMAGE_NAME}:latest

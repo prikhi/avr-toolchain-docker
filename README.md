@@ -1,12 +1,15 @@
-# Overview
+# AVR Toolchain Docker Image
 
-Lightweight docker image built on top of **alpine:3.10** with installed AVR toolchain and few additional tools:
-* AVR8 toolchain (2019, AVR_8_bit_GNU_Toolchain_3.6.2_1759)
-* avrdude (v6.3)
-* make (v4.2)
-* cmake (v3.14)
+Lightweight docker image built on top of **alpine:3.13** with installed AVR
+toolchain and few additional tools:
 
-DockerHub: https://hub.docker.com/r/lysergia/avr-toolchain
+* AVR8 toolchain (gcc-avr, avr-binutils)
+* avrdude
+* make
+* cmake
+* git
+
+[View on DockerHub](https://hub.docker.com/r/lysergia/avr-toolchain)
 
 ## Building image locally
 
@@ -22,9 +25,10 @@ docker build --rm -t lysergia/avr-toolchain:latest .
 docker run --rm --privileged -v $(pwd):/build lysergia/avr-toolchain avr-gcc -version
 ```
 
-# Installing
+## Installing
 
-Bellow you can find recommended simple one-line installer that pulls the newest docker-image and installs **avr-toolchain** script into "/usr/bin/" directory.
+Bellow you can find recommended simple one-line installer that pulls the newest
+docker-image and installs **avr-toolchain** script into "/usr/bin/" directory.
 
 ```bash
 curl https://raw.githubusercontent.com/prikhi/avr-toolchain-docker/master/install.sh | bash -s --
@@ -39,10 +43,10 @@ curl https://raw.githubusercontent.com/prikhi/avr-toolchain-docker/master/instal
 ## Examples
 
 ```bash
-$ cd your-project/
-$ avr-toolchain avr-gcc --version
-$ avr-toolchain make -version
-$ avr-toolchain avrdude --help
-$ avr-toolchain cmake -version
-$ avr-toolchain make && make flash
+cd your-project/
+avr-toolchain avr-gcc --version
+avr-toolchain make -version
+avr-toolchain avrdude --help
+avr-toolchain cmake -version
+avr-toolchain make && make flash
 ```
